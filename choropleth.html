@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Litter Risk</title>
+
+    <!-- style links -->
+    <link rel="stylesheet" href="./styles/map.css">
+
+     <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+
+</head>
+
+<body>
+    <header>
+        <!-- Your content goes here -->
+        <h1>Chennai Litter Risk</h1>
+    </header>
+
+    <main>
+        <!-- First dropdown -->
+        <select id="first-dropdown" onchange="populateSecondDropdown()">
+            <option value="">Select Country</option>
+            <option value="category1">Category 1</option>
+            <option value="category2">Category 2</option>
+            <option value="category3">Category 3</option>
+        </select>
+
+        <!-- Second dropdown (populated dynamically based on the selection in the first dropdown) -->
+        <select id="second-dropdown">
+            <option value="">Select City</option>
+        </select>
+
+        <div class="figures">
+            <div class="js-count">count average h1</div>
+            <div class="js-restaraunt">restaraunt h1</div>
+            <div class="js-water">water h1</div>
+        </div>
+
+        <div class="js-empty-state">
+            <img src="./imgs/empty.svg">
+            <p>no category data for current city</p>
+        </div>
+
+        <div class="js-chart chart"></div>
+
+        <div id="map"></div>
+        
+    </main>
+    
+    <!-- Leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- Apexchart js -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+    <!-- main js should be after leaflet-->
+    <script type="module" scr="./data/chennaigeo.js"></script>
+    <script type="module" src="./scripts/choropleth.js"></script>
+    <script type="module" src="./scripts/figureUpdate.js"></script>
+    <script type="module" src="./scripts/chart.js"></script>
+    <script type="module" src="./scripts/cascading-dropdown.js"></script>
+
+</body>
+
+</html>
