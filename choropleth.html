@@ -19,34 +19,31 @@
 <body>
     <header>
         <!-- Your content goes here -->
-        <h1>Chennai Litter Risk</h1>
+        <h1>Litter Risk</h1>
     </header>
 
     <main>
         <!-- First dropdown -->
-        <select id="first-dropdown" onchange="populateSecondDropdown()">
-            <option value="">Select Country</option>
-            <option value="category1">Category 1</option>
+        <select id="first-dropdown">
+            <option value="India" selected>India</option>
             <option value="category2">Category 2</option>
             <option value="category3">Category 3</option>
         </select>
 
         <!-- Second dropdown (populated dynamically based on the selection in the first dropdown) -->
         <select id="second-dropdown">
-            <option value="">Select City</option>
+            <option value="Chennai" selected>Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Surat">Surat</option>
         </select>
+
 
         <div class="figures">
             <div class="js-count">count average h1</div>
             <div class="js-restaraunt">restaraunt h1</div>
             <div class="js-water">water h1</div>
         </div>
-
-        <div class="js-empty-state">
-            <img src="./imgs/empty.svg">
-            <p>no category data for current city</p>
-        </div>
-
+    
         <div class="js-chart chart"></div>
 
         <div id="map"></div>
@@ -63,12 +60,17 @@
 
 
     <!-- main js should be after leaflet-->
-    <script type="module" scr="./data/chennaigeo.js"></script>
-    <script type="module" src="./scripts/choropleth.js"></script>
+    <script type="module" src="./data/final_net_combined.js"></script>
+    <script type="module" src="./scripts/sortData.js"></script>
+    <script type="module" src="./data/cityLatLon.js"></script>
+
+    <script type="module" src="./scripts/map.js"></script>
     <script type="module" src="./scripts/figureUpdate.js"></script>
     <script type="module" src="./scripts/chart.js"></script>
-    <script type="module" src="./scripts/cascading-dropdown.js"></script>
+    <script type="module" src="./scripts/selectCity.js"></script>
+
 
 </body>
 
 </html>
+
